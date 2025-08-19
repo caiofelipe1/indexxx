@@ -4,208 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para o Amor da Minha Vida</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        /* Mantive seu CSS original inline para simplicidade */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #f5c3e6, #e2b2d8, #d77fa1);
-            color: #333;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            overflow-x: hidden;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            padding: 30px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .heart {
-            position: absolute;
-            font-size: 20px;
-            opacity: 0.6;
-            z-index: 0;
-            animation: float 6s infinite ease-in-out;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
-        }
-        
-        h1 {
-            color: #e84393;
-            margin-bottom: 20px;
-            font-size: 2.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        p {
-            margin-bottom: 20px;
-            line-height: 1.6;
-            font-size: 1.1rem;
-        }
-        
-        .message-container {
-            margin: 30px 0;
-            position: relative;
-        }
-        
-        .secret-message {
-            background-color: #ffeaf7;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 15px 0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px dashed #e84393;
-        }
-        
-        .secret-message:hover {
-            transform: scale(1.02);
-            background-color: #fcddec;
-        }
-        
-        .hidden-message {
-            display: none;
-            padding: 15px;
-            margin-top: 10px;
-            background-color: #fff;
-            border-radius: 10px;
-            border-left: 4px solid #e84393;
-        }
-        
-        .photo-placeholder {
-            width: 200px;
-            height: 200px;
-            margin: 20px auto;
-            background-color: #f8bbd0;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #e84393;
-            font-weight: bold;
-            cursor: pointer;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .photo-placeholder:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .interactive-element {
-            margin: 30px 0;
-        }
-        
-        .love-button {
-            background-color: #e84393;
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 10px;
-        }
-        
-        .love-button:hover {
-            background-color: #fd79a8;
-            transform: scale(1.05);
-        }
-        
-        .counter {
-            font-size: 1.5rem;
-            margin: 20px 0;
-            color: #e84393;
-            font-weight: bold;
-        }
-        
-        footer {
-            margin-top: 30px;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .hearts-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .container { padding: 20px; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        body { background: linear-gradient(135deg, #f5c3e6, #e2b2d8, #d77fa1); color: #333; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; overflow-x: hidden; }
+        .container { max-width: 800px; width: 100%; background-color: rgba(255,255,255,0.9); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); padding: 30px; text-align: center; position: relative; overflow: hidden; }
+        .heart { position: absolute; font-size: 20px; opacity: 0.6; z-index: 0; animation: float 6s infinite ease-in-out; }
+        @keyframes float { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(10deg); } }
+        h1 { color: #e84393; margin-bottom: 20px; font-size: 2.5rem; position: relative; z-index: 1; }
+        p { margin-bottom: 20px; line-height: 1.6; font-size: 1.1rem; }
+        .message-container { margin: 30px 0; position: relative; }
+        .secret-message { background-color: #ffeaf7; border-radius: 15px; padding: 20px; margin: 15px 0; cursor: pointer; transition: all 0.3s ease; border: 2px dashed #e84393; }
+        .secret-message:hover { transform: scale(1.02); background-color: #fcddec; }
+        .hidden-message { display: none; padding: 15px; margin-top: 10px; background-color: #fff; border-radius: 10px; border-left: 4px solid #e84393; }
+        .photo-placeholder { width: 200px; height: 200px; margin: 20px auto; background-color: #f8bbd0; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #e84393; font-weight: bold; cursor: pointer; overflow: hidden; transition: all 0.3s ease; position: relative; }
+        .photo-placeholder:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        #photo-input { display: none; }
+        .interactive-element { margin: 30px 0; }
+        .love-button { background-color: #e84393; color: white; border: none; padding: 15px 40px; font-size: 1.2rem; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; margin: 10px; }
+        .love-button:hover { background-color: #fd79a8; transform: scale(1.05); }
+        .counter { font-size: 1.5rem; margin: 20px 0; color: #e84393; font-weight: bold; }
+        footer { margin-top: 30px; color: #666; font-size: 0.9rem; }
+        .hearts-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+        @media (max-width:600px){ h1{ font-size:2rem; } .container{ padding:20px; } }
     </style>
 </head>
 <body>
     <div class="hearts-container" id="hearts-container"></div>
     
     <div class="container">
-        <h1 id="title">Para a minha princesa</h1>
+        <h1 id="title">Para a Mulher da Minha Vida</h1>
         
         <div class="photo-placeholder" id="photo-placeholder">
             Clique para carregar uma foto nossa
         </div>
-        
+        <!-- input real para o celular -->
+        <input type="file" accept="image/*" id="photo-input">
+
         <div class="message-container">
             <p>Hoje e sempre, quero que saiba uma coisa...</p>
-            
             <div class="secret-message" onclick="revealMessage(1)">
                 💌 Clique para revelar minha primeira mensagem
-                <div class="hidden-message" id="message-1">
-                    Cada momento ao seu lado é um presente que guardo com muito carinho no meu coração.
-                </div>
+                <div class="hidden-message" id="message-1">Cada momento ao seu lado é um presente que guardo com muito carinho no meu coração.</div>
             </div>
-            
             <div class="secret-message" onclick="revealMessage(2)">
                 💖 Clique para revelar minha segunda mensagem
-                <div class="hidden-message" id="message-2">
-                    Seu sorriso ilumina meus dias de uma forma que nenhuma estrela no céu seria capaz.
-                </div>
+                <div class="hidden-message" id="message-2">Seu sorriso ilumina meus dias de uma forma que nenhuma estrela no céu seria capaz.</div>
             </div>
-            
             <div class="secret-message" onclick="revealMessage(3)">
                 📅 Clique para revelar minha terceira mensagem
-                <div class="hidden-message" id="message-3">
-                    Amo passar cada segundo ao seu lado.
-                </div>
+                <div class="hidden-message" id="message-3">Amo passar cada segundo ao seu lado.</div>
             </div>
         </div>
-        
+
         <div class="interactive-element">
             <p>Quantas vezes eu te amo?</p>
             <button class="love-button" id="love-button">Clique para descobrir</button>
             <div class="counter" id="love-counter">Te amo infinitamente ❤️</div>
         </div>
-        
+
         <div class="interactive-element">
             <button class="love-button" id="hearts-button">Clique para espalhar amor</button>
         </div>
@@ -213,10 +69,8 @@
         <div class="interactive-element">
             <button class="love-button" id="surprise-button">🎁 Surpresa final</button>
         </div>
-        
-        <footer>
-            Feito com ❤️ especialmente para você - Para sempre seu
-        </footer>
+
+        <footer>Feito com ❤️ especialmente para você - Para sempre seu</footer>
     </div>
 
     <script src="script.js"></script>
