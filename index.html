@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para o Amor da Minha Vida</title>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
     <style>
+        /* Mantive seu CSS original inline para simplicidade */
         * {
             margin: 0;
             padding: 0;
@@ -201,16 +202,16 @@
         
         <div class="interactive-element">
             <p>Quantas vezes eu te amo?</p>
-            <button class="love-button" onclick="addLove()">Clique para descobrir</button>
+            <button class="love-button" id="love-button">Clique para descobrir</button>
             <div class="counter" id="love-counter">Te amo infinitamente ❤️</div>
         </div>
         
         <div class="interactive-element">
-            <button class="love-button" onclick="createHearts()">Clique para espalhar amor</button>
+            <button class="love-button" id="hearts-button">Clique para espalhar amor</button>
         </div>
 
         <div class="interactive-element">
-            <button class="love-button" onclick="finalSurprise()">🎁 Surpresa final</button>
+            <button class="love-button" id="surprise-button">🎁 Surpresa final</button>
         </div>
         
         <footer>
