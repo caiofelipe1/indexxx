@@ -14,17 +14,14 @@ function typeWriter() {
 typeWriter();
 
 // --- Função para revelar mensagens ocultas ---
-document.querySelectorAll('.secret-message').forEach(el => {
-    el.addEventListener('click', () => {
-        const id = el.getAttribute('data-id');
-        const message = document.getElementById(`message-${id}`);
-        message.style.display = message.style.display === 'block' ? 'none' : 'block';
-    });
-});
+function revealMessage(id) {
+    const message = document.getElementById(`message-${id}`);
+    message.style.display = message.style.display === 'block' ? 'none' : 'block';
+}
 
 // --- Função para o contador de amor ---
 let loveCount = 0;
-document.getElementById('love-button').addEventListener('click', () => {
+function addLove() {
     loveCount++;
     const counter = document.getElementById('love-counter');
     if (loveCount < 10) {
@@ -34,7 +31,7 @@ document.getElementById('love-button').addEventListener('click', () => {
     } else {
         counter.textContent = `Te amo ${loveCount} vezes mais que o infinito ❤️`;
     }
-});
+}
 
 // --- Função para criar corações/estrelas/balões flutuantes ---
 function createHearts() {
@@ -51,11 +48,11 @@ function createHearts() {
         heart.style.animationDuration = (Math.random() * 5 + 3) + 's';
         heartsContainer.appendChild(heart);
 
-        setTimeout(() => heart.remove(), 8000);
+        setTimeout(() => {
+            heart.remove();
+        }, 8000);
     }
 }
-
-document.getElementById('hearts-button').addEventListener('click', createHearts);
 
 // --- Adicionar alguns corações iniciais ---
 for (let i = 0; i < 10; i++) {
@@ -90,6 +87,6 @@ document.getElementById('photo-placeholder').addEventListener('click', function(
 setInterval(createHearts, 3000);
 
 // --- Surpresa final ---
-document.getElementById('surprise-button').addEventListener('click', () => {
+function finalSurprise() {
     alert("Eu te amo do tamanho do Universo 💖✨");
-});
+}
